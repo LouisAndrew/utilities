@@ -15,6 +15,7 @@ const getBaseUrl = () => {
 export const customLink: TRPCLink<AppRouter> = () => {
   return ({ next, op }) => {
     return observable((observer) => {
+      // eslint-disable-next-line no-console
       console.log("performing operation:", op);
       const unsubscribe = next(op).subscribe({
         next(value) {
