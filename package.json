@@ -10,6 +10,7 @@
     "serve": "next start"
   },
   "dependencies": {
+    "@louisandrew3/gh-update-files": "1.2.4",
     "@tanstack/react-query": "^4.20.2",
     "@trpc/client": "^10.9.0",
     "@trpc/next": "^10.9.0",
