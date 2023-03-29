@@ -56,7 +56,6 @@ export default async function handler(
       msg: success ? "Note created successfully." : "Note creation failed.",
     });
   } catch (e) {
-    console.log(e);
     res.send({
       msg: "Something went wrong",
     });
