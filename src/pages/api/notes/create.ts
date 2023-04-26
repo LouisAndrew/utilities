@@ -5,19 +5,6 @@ type GenericResponse = {
   msg: string;
 };
 
-const getDateComponents = (date: Date): [string, string, string] => {
-  const year = date.getFullYear().toString();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return [day, month, year];
-};
-
-const getFilePath = () => {
-  const [day, month, year] = getDateComponents(new Date());
-  const formattedFileName = [day, month, year.slice(2)].join(".");
-  return `${year}/${month}/${formattedFileName}.md`;
-};
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<GenericResponse>
@@ -42,7 +29,7 @@ export default async function handler(
 
   try {
     const success = await githubUpdateFile({
-      path: getFilePath(),
+      path: "Commmonplace",
       accessToken: token,
       content: note,
       owner: "LouisAndrew",
