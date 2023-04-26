@@ -29,7 +29,7 @@ export default async function handler(
 
   try {
     const success = await githubUpdateFile({
-      path: "Commmonplace",
+      path: "Commmonplace.md",
       accessToken: token,
       content: note,
       owner: "LouisAndrew",
